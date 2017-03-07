@@ -1,5 +1,6 @@
 package com.chuang;
 
+
 import java.util.Scanner;
 
 /**
@@ -21,4 +22,5 @@ public class myTest {
             }
         }
     }
+
 }
