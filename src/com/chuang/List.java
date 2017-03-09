@@ -13,9 +13,9 @@ public class List {
      * @param s
      */
     public static void main(String[] s){
-        LinkedList();
+        //LinkedList();
 
-       // ArrayList();
+        ArrayList();
     }
 
 
@@ -63,6 +63,15 @@ public class List {
         while(it.hasNext()){
             System.err.println(it.next());
             System.err.println(it.hashCode());
+        }
+        /**
+         * 转换成数组，然后遍历数组
+         */
+        System.out.println("转换成数组，然后遍历");
+        Object[] OArray = new Object[list.size()];
+        list.toArray(OArray);
+        for(int i=0;i<OArray.length;i++){
+            System.out.println(OArray[i]);
         }
     }
 

@@ -36,5 +36,19 @@ public class Map {
             Object value = map.get(key);
             System.out.println(key+" : "+value);
         }
+        /**
+         *遍历value
+         */
+        System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
+        for (Object v : map.values()) {
+            System.out.println("value= " + v);
+        }
+
+        /**
+         * 推荐，尤其是容量大时
+         */
+        System.out.println("通过Map.entrySet遍历key和value");
+        for (java.util.Map.Entry<Integer, Object> entry : map.entrySet())
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
     }
 }
