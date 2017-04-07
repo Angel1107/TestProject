@@ -14,7 +14,7 @@ public class Character {
         System.out.println("Test \r Test");      //测试插入回车，后面的没了
         System.out.println("Test \f Test");      //测试换页符,无效果
         System.out.println("Test \' Test  \'");  //测试单引号
-        System.out.println("Test \' Test  \"");  //测试双引号
+        System.out.println("Test \" Test  \"");  //测试双引号
         System.out.println("Test \\ Test  \\");  //测试反斜杠
     }
 
