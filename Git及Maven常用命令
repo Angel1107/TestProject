@@ -1,0 +1,22 @@
+    git 命令：
+       git  init              初始化创建仓库
+       git  add file           添加文件
+       git  commit -m”描述”   提交
+       git  log               显示日志
+       Git branch             查看分支
+       Git branch 新分支名    新建分支
+       Git checkout 分支名    切换分支
+       Git branch  -D 分支名  删除分支
+       Git merge 分支名      合并分支
+       Git clone 地址         拉取远程仓库
+       Git push origin 分支名  推送到远程仓库
+       Git fetch origin 分支名  同步更新
+   
+   Maven命令：
+      打包跳过测试： Mvn clean package -DMaven.test.skip=true
+      编译：Mvn compile
+      安装：Mvn install
+      打包：mvn package
+      清理：mvn clean
+      编译test：mvn test-compile
+      执行test：mvn test
