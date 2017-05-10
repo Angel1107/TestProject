@@ -1,0 +1,90 @@
+package org.chuang.util;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class DateUtil {
+	
+	/**
+	 * 计算两个时间相差几天
+	 * @param fDate
+	 * @param oDate
+	 * @return
+	 */
+	public static int daysOfTwo(Date fDate, Date oDate) {
+
+	       Calendar aCalendar = Calendar.getInstance();
+
+	       aCalendar.setTime(fDate);
+
+	       int day1 = aCalendar.get(Calendar.DAY_OF_YEAR);
+
+	       aCalendar.setTime(oDate);
+
+	       int day2 = aCalendar.get(Calendar.DAY_OF_YEAR);
+
+	       return day2 - day1;
+	    }
+	/**
+	 * 获取昨天日期
+	 * @return
+	 * @throws ParseException
+	 */
+		public static Date daysOfYestorday() throws ParseException{
+			SimpleDateFormat dft = new SimpleDateFormat("yyyy-MM-dd");
+			Date beginDate = new Date();
+			Calendar date = Calendar.getInstance();
+			date.setTime(beginDate);
+			date.set(Calendar.DATE, date.get(Calendar.DATE) - 1);
+				return dft.parse(dft.format(date.getTime()));
+		}
+		
+		/**
+		 * 获取一周前日期
+		 * @return
+		 * @throws ParseException
+		 */
+		public static Date daysOfWeek() throws ParseException{
+			SimpleDateFormat dft = new SimpleDateFormat("yyyy-MM-dd");
+			Date beginDate = new Date();
+			Calendar date = Calendar.getInstance();
+			date.setTime(beginDate);
+			date.set(Calendar.DATE, date.get(Calendar.DATE) - 6);
+				return dft.parse(dft.format(date.getTime()));
+		}
+	
+	/**
+	 * 判断是否周末
+	 * @return
+	 * @throws ParseException
+	 */
+		public static String daysOfWeekend() throws ParseException {
+			DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+			String bDate = "2017-5-15";
+			Date bdate = format1.parse(bDate);
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(bdate);
+			if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+					|| cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+				return "yes";
+			} else
+				return "no";
+		}
+	
+	  public static void main(String[] args) {
+
+	       java.sql.Date str = java.sql.Date.valueOf("2017-05-02");
+	       System.out.println("使用 daysOfTwo 相差天数 = "+ daysOfTwo(str, new Date()));
+	       
+	       try {
+	       System.out.println(daysOfWeekend()+"......");
+			System.out.println(daysOfYestorday());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}
